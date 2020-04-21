@@ -21,7 +21,7 @@ from . import view, testdb, search
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('hello/', view.hello),
-    url(r'^$', view.hello),
+    url(r'^$', view.index),
     url(r'^hello$', view.hello),
     url(r'^testdb$', testdb.testdb),
     url(r'^get$', testdb.get),
