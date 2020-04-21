@@ -29,7 +29,7 @@ brew services start nginx
 Link `website_nginx.conf` file
 
 ```bash
-sudo ln -s /Users/pichao/Source/CMCS/website/website_nginx.conf /etc/nginx/sites-enabled/
+sudo ln -s /home/pichao/Source/CMCS/website/website_nginx.conf /etc/nginx/sites-enabled/
 ```
 or
 
