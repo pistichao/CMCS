@@ -8,6 +8,8 @@ verify_ssl = true
 [packages]
 django = "*"
 uwsgi = "*"
+mysql = "*"
+mysql-connector = "*"
 
 [requires]
 python_version = "3.8"
