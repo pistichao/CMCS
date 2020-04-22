@@ -292,7 +292,7 @@
 
             {% block pagecontent %}
                 <!-- Begin Page Content -->
-                <div class="container-fluid">
+                <div class="container-fluid" style="width:1450px;height:620px; overflow:auto;">
                     <a name="car"></a>
                     <h2>Car</h2>
                     <p> This is a self-driving car with powerful control board and multiple sensors.
@@ -301,27 +301,39 @@
                     <a name="board"></a>
                     <h2>Board</h2>
                     <p> Jetson TX2 is the fastest, most power-efficient embedded AI computing device. This 7.5-watt supercomputer on a module brings true AI computing at the edge. It's built around an NVIDIA Pascal™-family GPU and loaded with 8GB of memory and 59.7GB/s of memory bandwidth. It features a variety of standard hardware interfaces that make it easy to integrate it into a wide range of products and form factors.</p>
+                    <p> For more details, <a href="https://developer.nvidia.com/embedded/jetson-tx2-developer-kit">click</a> here.</p>
                     
                     <a name="power"></a>
                     <h2>Power</h2>
                     <p> To provide sufficient power to JETSON board, we choose  POWEROAK 50000mah Portable Battery Pack.</p>
+                    <p> For more details, <a href="https://www.amazon.com/POWEROAK-External-capacity-50000mAh-Portable/dp/B073R6NKLW/ref=sr_1_1_sspa?keywords=power+bank+5%2F12%2F20+V&qid=1558997826&s=gateway&sr=8-1-spons&psc=1">click</a> here.</p>
                     
                     <a name="storage"></a>
                     <h2>Storage</h2>
                     <p> To store the data from multiple sensors, at least a large capacity of 500GB SSD is needed.</p>
+                    <p> For more details, <a href="https://www.amazon.com/dp/B0781Z7Y3S/ref=cm_sw_em_r_mt_dp_U_J5AuEbWZ56K6C">click</a> here.</p>
                     
                     <a name="controller"></a>
                     <h2>Controller</h2>
                     <p> Teensy microcontroller recevies control signal from JETSON TX2, then drive the rally cars' servo and motor.</p>
+                    <p> For more details, <a href="https://www.amazon.com/PJRC-Teensy-3-6-Without-Pins/dp/B01LWQM6IQ/ref=sr_1_2?crid=1HOLNA9AIRJ64&keywords=teensy+3.6&qid=1559084114&s=industrial&sprefix=Teensy+3%2Cindustrial%2C194&sr=1-2">click</a> here.</p>
                     
                     <a name="sensor"></a>
                     <h2>Sensors</h2>
                     <p> Three sensors are used: ZED stereo camera, YDLIDAR G4 laser scanner, and IMU.</p>
-                    <p> ZED stereo camera, which is a 3D camera, captures environment images, which is used for object detection and object recognition.</p>
-                    <p> YDLIDAR G4 laser scanner, which is a 360° lidar, detects the distance to surrounding obstacles, which is used for localization and obstacle avoidance.</p>
-                    <p> IMU is used for better localization.</p>
+                    <p> 1. <a href="https://www.amazon.com/PJRC-Teensy-3-6-Without-Pins/dp/B01LWQM6IQ/ref=sr_1_2?crid=1HOLNA9AIRJ64&keywords=teensy+3.6&qid=1559084114&s=industrial&sprefix=Teensy+3%2Cindustrial%2C194&sr=1-2">ZED stereo camera</a>, which is a 3D camera, captures environment images, which is used for object detection and object recognition.</p>
+                    <p> 2. <a href="https://www.robotshop.com/en/ydlidar-g4-360-laser-scanner.html">YDLIDAR G4 laser scanner</a>, which is a 360° lidar, detects the distance to surrounding obstacles, which is used for localization and obstacle avoidance.</p>
+                    <p> 3. <a href="https://www.amazon.com/SparkFun-PID-14001-9DoF-Razor/dp/B01MXW00BY/ref=sr_1_1?keywords=SparkFun+9DoF+Razor+IMU+M0&qid=1571776610&sr=8-1">IMU</a> is used for better localization.</p>
                     
-            
+                    <a name="cuda"></a>
+                    <h2>CUDA</h2>
+                    <p> JETSON TX2 board uses 256-core NVIDIA Pascal™ GPU architecture with 256 NVIDIA CUDA cores.</p>
+                    <p> For more details, <a href="https://docs.nvidia.com/cuda/index.html">click</a> here.</p>
+                    
+                    <a name="ros"></a>
+                    <h2>ROS</h2>
+                    <p> To better control the self-driving car, the basic module is developed under ROS Melodic, which is available for Ubuntu 18.04 LTS.</p>
+                    <p> For more details, <a href="http://wiki.ros.org/melodic/Installation/Ubuntu">click</a> here.</p>
                 </div>
                 <!-- /.container-fluid -->
             {% endblock %}
