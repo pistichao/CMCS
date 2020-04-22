@@ -58,16 +58,15 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Hardware:</h6>
-                        <a class="collapse-item" href=#>Car</a>
-                        <a class="collapse-item" href=#>Board</a>
-                        <a class="collapse-item" href=#>Power</a>
-                        <a class="collapse-item" href=#>Storage</a>
-                        <a class="collapse-item" href=#>Controller</a>
-                        <a class="collapse-item" href=#>Sensors</a>
-                        <a class="collapse-item" href=#>Cables</a>
+                        <a class="collapse-item" href="#car">Car</a>
+                        <a class="collapse-item" href="#board">Board</a>
+                        <a class="collapse-item" href="#power">Power</a>
+                        <a class="collapse-item" href="#storage">Storage</a>
+                        <a class="collapse-item" href="#controller">Controller</a>
+                        <a class="collapse-item" href="#sensor">Sensors</a>
                         <h6 class="collapse-header">Software:</h6>
-                        <a class="collapse-item" href=#>CUDA</a>
-                        <a class="collapse-item" href=#>ROS</a>
+                        <a class="collapse-item" href="#cuda">CUDA</a>
+                        <a class="collapse-item" href="#ros">ROS</a>
                     </div>
                 </div>
             </li>
@@ -85,7 +84,8 @@
                         <h6 class="collapse-header">Hardware Setup:</h6>
                         <a class="collapse-item" href=#>Frame</a>
                         <a class="collapse-item" href=#>ESC</a>
-                        <a class="collapse-item" href=#>IMU</a>
+                        <a class="collapse-item" href=#>Camera</a>
+                        <a class="collapse-item" href=#>Lidar</a>
                         <a class="collapse-item" href=#>Other</a>
                         <h6 class="collapse-header">Software Setup</h6>
                         <a class="collapse-item" href=#>Driver</a>
@@ -293,7 +293,35 @@
             {% block pagecontent %}
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-
+                    <a name="car"></a>
+                    <h2>Car</h2>
+                    <p> This is a self-driving car with powerful control board and multiple sensors.
+                    <p> <img src="images/car.png" width="250" height="210" /></p>
+                    
+                    <a name="board"></a>
+                    <h2>Board</h2>
+                    <p> Jetson TX2 is the fastest, most power-efficient embedded AI computing device. This 7.5-watt supercomputer on a module brings true AI computing at the edge. It's built around an NVIDIA Pascal™-family GPU and loaded with 8GB of memory and 59.7GB/s of memory bandwidth. It features a variety of standard hardware interfaces that make it easy to integrate it into a wide range of products and form factors.</p>
+                    
+                    <a name="power"></a>
+                    <h2>Power</h2>
+                    <p> To provide sufficient power to JETSON board, we choose  POWEROAK 50000mah Portable Battery Pack.</p>
+                    
+                    <a name="storage"></a>
+                    <h2>Storage</h2>
+                    <p> To store the data from multiple sensors, at least a large capacity of 500GB SSD is needed.</p>
+                    
+                    <a name="controller"></a>
+                    <h2>Controller</h2>
+                    <p> Teensy microcontroller recevies control signal from JETSON TX2, then drive the rally cars' servo and motor.</p>
+                    
+                    <a name="sensor"></a>
+                    <h2>Sensors</h2>
+                    <p> Three sensors are used: ZED stereo camera, YDLIDAR G4 laser scanner, and IMU.</p>
+                    <p> ZED stereo camera, which is a 3D camera, captures environment images, which is used for object detection and object recognition.</p>
+                    <p> YDLIDAR G4 laser scanner, which is a 360° lidar, detects the distance to surrounding obstacles, which is used for localization and obstacle avoidance.</p>
+                    <p> IMU is used for better localization.</p>
+                    
+            
                 </div>
                 <!-- /.container-fluid -->
             {% endblock %}
