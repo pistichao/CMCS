@@ -21,6 +21,28 @@
 
 </head>
 
+<script type="text/javascript">
+
+    function show(id) {
+        if (id == 'components'){
+            document.getElementById('components').style.display = 'block';
+            document.getElementById('setup').style.display = 'none';
+            document.getElementById('home').style.display = 'none';
+        }
+        else if (id == 'setup'){
+            document.getElementById('components').style.display = 'none';
+            document.getElementById('setup').style.display = 'block';
+            document.getElementById('home').style.display = 'none';
+        }
+        else {
+            document.getElementById('components').style.display = 'none';
+            document.getElementById('setup').style.display = 'none';
+            document.getElementById('home').style.display = 'block';
+        }
+    }
+
+</script>
+
 <body id="page-top">
 
 <!-- Page Wrapper -->
@@ -30,7 +52,7 @@
         <!-- Sidebar-->
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#" onclick="show('home')">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
@@ -50,7 +72,7 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                <a class="nav-link collapsed" href="#" onclick="show('components')" data-toggle="collapse" data-target="#collapseTwo"
                    aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Components</span>
@@ -73,7 +95,7 @@
 
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+                <a class="nav-link collapsed" href="#" onclick="show('setup')" data-toggle="collapse" data-target="#collapseUtilities"
                    aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-fw fa-wrench"></i>
                     <span>Setup</span>
@@ -82,11 +104,11 @@
                      data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Hardware Setup:</h6>
-                        <a class="collapse-item" href=#>Frame</a>
-                        <a class="collapse-item" href=#>ESC</a>
-                        <a class="collapse-item" href=#>Camera</a>
-                        <a class="collapse-item" href=#>Lidar</a>
-                        <a class="collapse-item" href=#>Other</a>
+                        <a class="collapse-item" href="#frame">Frame</a>
+                        <a class="collapse-item" href="#esc">ESC</a>
+                        <a class="collapse-item" href="#camera">Camera</a>
+                        <a class="collapse-item" href="#lidar">Lidar</a>
+                        <a class="collapse-item" href="#other">Other</a>
                         <h6 class="collapse-header">Software Setup</h6>
                         <a class="collapse-item" href=#>Driver</a>
                         <a class="collapse-item" href=#>CUDA</a>
@@ -292,7 +314,13 @@
 
             {% block pagecontent %}
                 <!-- Begin Page Content -->
-                <div class="container-fluid" style="width:1450px;height:620px; overflow:auto;">
+                <div id="home" class="container-fluid" style="width:1450px;height:620px; overflow:auto; display: block;">
+                    <p> This project implements a cloud-based real-time control system for multiple vehicles to realize autonomous driving in a controlled environment. The inspiration for this project is from an MIT course, entitled "Robotics: Science and Systems".</p>
+                    <p>The MIT’s project built a self-driving vehicle from a toy race car integrated with an on-board computer, which utilizes a camera and Lidar to perform real-time autonomous driving in a building hallway. All the computing and operation was processed with this on-board computer. However, their project focused on applying only one on-board computer to perform one autonomous driving vehicle without the capability to expand to multiple vehicles. From their implementation, this project will enable the potential to expand the self-driving capability to multiple vehicles by leveraging multi-vehicle management systems to a server. Each vehicle can be set up with the system and access the server to achieve mobile terminal management. Each vehicle can perform environmental detection, information collection, data transmission and collaborative working.</p>
+                    <p>Similar to the MIT project, this project starts with a single agent vehicle controlled by a JETSON TX2 embedded AI computer. With an on-board LIDAR and stereo camera, information gathered from the surrounding environment will be sent to the computer and cloud for processing. In the initial part of the project, the computation would be completed by the on-board computer, and later the computing part will be migrated to the cloud for multiple-agent processing.</p>
+                </div>
+                
+                <div id="components" class="container-fluid" style="width:1450px;height:620px; overflow:auto; display: none;">
                     <a name="car"></a>
                     <h2>Car</h2>
                     <p> This is a self-driving car with powerful control board and multiple sensors.
@@ -332,6 +360,13 @@
                     
                     <a name="ros"></a>
                     <h2>ROS</h2>
+                    <p> To better control the self-driving car, the basic module is developed under ROS Melodic, which is available for Ubuntu 18.04 LTS.</p>
+                    <p> For more details, <a href="http://wiki.ros.org/melodic/Installation/Ubuntu">click</a> here.</p>
+                </div>
+                
+                <div id="setup" class="container-fluid" style="width:1450px;height:620px; overflow:auto; display: none;">
+                    <a name="ros"></a>
+                    <h2>Frame</h2>
                     <p> To better control the self-driving car, the basic module is developed under ROS Melodic, which is available for Ubuntu 18.04 LTS.</p>
                     <p> For more details, <a href="http://wiki.ros.org/melodic/Installation/Ubuntu">click</a> here.</p>
                 </div>
