@@ -11,10 +11,7 @@ CREATE TABLE users (
     tel VARCHAR(20) NOT NULL,
     cars VARCHAR(100) NOT NULL
 );
-insert into users(
-uid,username,firstname,lastname,email,address,tel,cars)
-values(
-null,"pcpcp","chao","pi","pc@email.com","pchome","12345","none");
+
 drop table if exists cars;
 CREATE TABLE cars (
     cid INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -22,18 +19,11 @@ CREATE TABLE cars (
     info VARCHAR(1000) NOT NULL,
     tasks VARCHAR(100) NOT NULL
 );
-insert into cars(
-cid,carname,info,tasks)
-values(
-null,"acro","Jetson TX2","none");
+
 drop table if exists tasks;
 CREATE TABLE tasks (
     tid INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     taskname VARCHAR(100) NOT NULL,
-    info VARCHAR(1000) NOT NULL
-);
-insert into tasks(
-tid,taskname,info)
-values(
-null, "wondering","none"
+    info VARCHAR(1000) NOT NULL,
+    status VARCHAR(20) NOT NUll
 );
