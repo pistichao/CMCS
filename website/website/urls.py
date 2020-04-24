@@ -23,10 +23,12 @@ urlpatterns = [
     path('hello/', view.hello),
     url(r'^$', view.index),
     url(r'^hello$', view.hello),
-    url(r'^testdb$', testdb.testdb),
-    url(r'^get$', testdb.get),
-    # url(r'^update$', testdb.u),
-    # url(r'^delete$', testdb.d),
+    url(r'^initu$', testdb.init_user),
+    url(r'^getu$', testdb.get_user),
+    url(r'^initc$', testdb.init_car),
+    url(r'^getc$', testdb.get_car),
+    url(r'^initt$', testdb.init_task),
+    url(r'^gett$', testdb.get_task),
     url(r'^search-form$', search.search_form),
     url(r'^search$', search.search)
 ]
