@@ -9,3 +9,10 @@ def hello(request):
 def index(request):
     user_info = {'name': 'Chris'}
     return render(request, 'index.html', user_info)
+
+
+def login(request):
+    return render(request, 'login.html', )
+
+def notfound(request):
+    return render(request, '404.html')

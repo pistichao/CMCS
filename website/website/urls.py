@@ -30,5 +30,7 @@ urlpatterns = [
     # url(r'^initt$', testdb.init_task),
     url(r'^gett$', testdb.get_task),
     url(r'^search-form$', search.search_form),
-    url(r'^search$', search.search)
+    url(r'^search$', search.search),
+    url(r'^login', view.login),
+    url(r'.*', view.notfound)
 ]
