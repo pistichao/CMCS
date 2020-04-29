@@ -12,6 +12,9 @@ class Users(models.Model):
     tel = models.CharField(max_length=100)
     cars = models.CharField(max_length=100)
 
+    def __str__(self):
+        return self.firstname
+
 
 class Cars(models.Model):
     carname = models.CharField(max_length=100)

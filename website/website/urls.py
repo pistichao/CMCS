@@ -22,6 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('hello/', view.hello),
     url(r'^$', view.index),
+    url(r'^index', view.index),
     url(r'^hello$', view.hello),
     url(r'^initu$', testdb.init_user),
     url(r'^getu$', testdb.get_user),

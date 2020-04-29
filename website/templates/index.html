@@ -24,25 +24,22 @@
 <script type="text/javascript">
 
     function show(id) {
-        if (id == 'components'){
+        if (id == 'components') {
             document.getElementById('components').style.display = 'block';
             document.getElementById('setup').style.display = 'none';
             document.getElementById('home').style.display = 'none';
             document.getElementById('simulation').style.display = 'none';
-        }
-        else if (id == 'setup'){
+        } else if (id == 'setup') {
             document.getElementById('components').style.display = 'none';
             document.getElementById('setup').style.display = 'block';
             document.getElementById('home').style.display = 'none';
             document.getElementById('simulation').style.display = 'none';
-        }
-        else if (id == 'simulation'){
+        } else if (id == 'simulation') {
             document.getElementById('components').style.display = 'none';
             document.getElementById('setup').style.display = 'none';
             document.getElementById('home').style.display = 'none';
             document.getElementById('simulation').style.display = 'block';
-        }
-        else {
+        } else {
             document.getElementById('components').style.display = 'none';
             document.getElementById('setup').style.display = 'none';
             document.getElementById('home').style.display = 'block';
@@ -57,23 +54,23 @@
 <!-- Page Wrapper -->
 <div id="wrapper">
 
-    {% block sidebar %}
-        <!-- Sidebar-->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-            <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#" onclick="show('home')">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
-                </div>
-                <div class="sidebar-brand-text mx-3">CMCS</div>
-            </a>
 
-            <!-- Divider -->
-            <hr class="sidebar-divider my-0">
+    <!-- Sidebar-->
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+        <!-- Sidebar - Brand -->
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/" onclick="show('home')">
+            <div class="sidebar-brand-icon rotate-n-15">
+                <i class="fas fa-laugh-wink"></i>
+            </div>
+            <div class="sidebar-brand-text mx-3">CMCS</div>
+        </a>
 
-            <!-- Divider -->
-            <hr class="sidebar-divider">
+        <!-- Divider -->
+        <hr class="sidebar-divider my-0">
 
+        <!-- Divider -->
+        <hr class="sidebar-divider">
+        {% block sidebar %}
             <!-- Heading -->
             <div class="sidebar-heading">
                 Autonomous Car Intro
@@ -81,7 +78,8 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" onclick="show('components')" data-toggle="collapse" data-target="#collapseTwo"
+                <a class="nav-link collapsed" href="#" onclick="show('components')" data-toggle="collapse"
+                   data-target="#collapseTwo"
                    aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Components</span>
@@ -104,7 +102,8 @@
 
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" onclick="show('setup')" data-toggle="collapse" data-target="#collapseUtilities"
+                <a class="nav-link collapsed" href="#" onclick="show('setup')" data-toggle="collapse"
+                   data-target="#collapseUtilities"
                    aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-fw fa-wrench"></i>
                     <span>Setup</span>
@@ -119,10 +118,11 @@
                     </div>
                 </div>
             </li>
-            
+
             <!-- Nav Item - Simulation Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" onclick="show('simulation')" data-toggle="collapse" data-target="#collapseOne"
+                <a class="nav-link collapsed" href="#" onclick="show('simulation')" data-toggle="collapse"
+                   data-target="#collapseOne"
                    aria-expanded="true" aria-controls="collapseOne">
                     <i class="fas fa-fw fa-splotch"></i>
                     <span>Simulation</span>
@@ -141,14 +141,15 @@
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
-            <!-- Sidebar Toggler (Sidebar) -->
-            <div class="text-center d-none d-md-inline">
-                <button class="rounded-circle border-0" id="sidebarToggle"></button>
-            </div>
+        {% endblock %}
+        <!-- Sidebar Toggler (Sidebar) -->
+        <div class="text-center d-none d-md-inline">
+            <button class="rounded-circle border-0" id="sidebarToggle"></button>
+        </div>
 
-        </ul>
-        <!-- End of Sidebar -->
-    {% endblock %}
+    </ul>
+    <!-- End of Sidebar -->
+
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
 
@@ -162,22 +163,23 @@
                 <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                     <i class="fa fa-bars"></i>
                 </button>
-
-                <!-- Topbar Search -->
-                <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                    <div class="input-group">
-                        <input type="text" class="form-control bg-light border-0 small" placeholder="Search in doc"
-                               aria-label="Search" aria-describedby="basic-addon2">
-                        <div class="input-group-append">
-                            <button class="btn btn-primary" type="button">
-                                <i class="fas fa-search fa-sm"></i>
-                            </button>
+                {% block topbar %}
+                    <!-- Topbar Search -->
+                    <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                        <div class="input-group">
+                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search in doc"
+                                   aria-label="Search" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="button">
+                                    <i class="fas fa-search fa-sm"></i>
+                                </button>
+                            </div>
                         </div>
-                    </div>
-                </form>
+                    </form>
 
-                <!-- Topbar Navbar -->
-                <ul class="navbar-nav ml-auto">
+                    <!-- Topbar Navbar -->
+
+                    <ul class="navbar-nav ml-auto">
 
                     <!-- Nav Item - Search Dropdown (Visible Only XS) -->
                     <li class="nav-item dropdown no-arrow d-sm-none">
@@ -206,14 +208,16 @@
                     <div class="topbar-divider d-none d-sm-block"></div>
 
                     <!-- Nav Item - User Information -->
+
                     <li class="nav-item dropdown no-arrow">
-{#                        <a class="nav-link dropdown-toggle" href="login.html" id="userDropdown" role="button"#}
-{#                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">#}
-{#                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">Log In</span>#}
-{#                            <img class="img-profile rounded-circle" src="../media/cat.jpg">#}
-{#                        </a>#}
+                        {#                        <a class="nav-link dropdown-toggle" href="login.html" id="userDropdown" role="button"#}
+                        {#                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">#}
+                        {#                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">Log In</span>#}
+                        {#                            <img class="img-profile rounded-circle" src="../media/cat.jpg">#}
+                        {#                        </a>#}
                         <a class="btn btn-primary" href="login.html">Log In</a>
                     </li>
+                {% endblock %}
 
                 </ul>
 
@@ -222,86 +226,147 @@
 
             {% block pagecontent %}
                 <!-- Begin Page Content -->
-                <div id="home" class="container-fluid" style="width:1450px;height:620px; overflow:auto; display: block;">
-                    <p> This project implements a cloud-based real-time control system for multiple vehicles to realize autonomous driving in a controlled environment. The inspiration for this project is from an MIT course, entitled "Robotics: Science and Systems".</p>
-                    <p>The MIT’s project built a self-driving vehicle from a toy race car integrated with an on-board computer, which utilizes a camera and Lidar to perform real-time autonomous driving in a building hallway. All the computing and operation was processed with this on-board computer. However, their project focused on applying only one on-board computer to perform one autonomous driving vehicle without the capability to expand to multiple vehicles. From their implementation, this project will enable the potential to expand the self-driving capability to multiple vehicles by leveraging multi-vehicle management systems to a server. Each vehicle can be set up with the system and access the server to achieve mobile terminal management. Each vehicle can perform environmental detection, information collection, data transmission and collaborative working.</p>
-                    <p>Similar to the MIT project, this project starts with a single agent vehicle controlled by a JETSON TX2 embedded AI computer. With an on-board LIDAR and stereo camera, information gathered from the surrounding environment will be sent to the computer and cloud for processing. In the initial part of the project, the computation would be completed by the on-board computer, and later the computing part will be migrated to the cloud for multiple-agent processing.</p>
+                <div id="home" class="container-fluid"
+                     style="width:1450px;height:620px; overflow:auto; display: block;">
+                    <p> This project implements a cloud-based real-time control system for multiple vehicles to realize
+                        autonomous driving in a controlled environment. The inspiration for this project is from an MIT
+                        course, entitled "Robotics: Science and Systems".</p>
+                    <p>The MIT’s project built a self-driving vehicle from a toy race car integrated with an on-board
+                        computer, which utilizes a camera and Lidar to perform real-time autonomous driving in a
+                        building hallway. All the computing and operation was processed with this on-board computer.
+                        However, their project focused on applying only one on-board computer to perform one autonomous
+                        driving vehicle without the capability to expand to multiple vehicles. From their
+                        implementation, this project will enable the potential to expand the self-driving capability to
+                        multiple vehicles by leveraging multi-vehicle management systems to a server. Each vehicle can
+                        be set up with the system and access the server to achieve mobile terminal management. Each
+                        vehicle can perform environmental detection, information collection, data transmission and
+                        collaborative working.</p>
+                    <p>Similar to the MIT project, this project starts with a single agent vehicle controlled by a
+                        JETSON TX2 embedded AI computer. With an on-board LIDAR and stereo camera, information gathered
+                        from the surrounding environment will be sent to the computer and cloud for processing. In the
+                        initial part of the project, the computation would be completed by the on-board computer, and
+                        later the computing part will be migrated to the cloud for multiple-agent processing.</p>
                 </div>
-                
-                <div id="components" class="container-fluid" style="width:1450px;height:620px; overflow:auto; display: none;">
+
+                <div id="components" class="container-fluid"
+                     style="width:1450px;height:620px; overflow:auto; display: none;">
                     <a name="car"></a>
                     <h2>Car</h2>
                     <p> This is a self-driving car with powerful control board and multiple sensors.
-                    <p> <img src="../media/car.png" width="250" height="210" /></p>
-                    
+                    <p><img src="../media/car.png" width="250" height="210"/></p>
+
                     <a name="board"></a>
                     <h2>Board</h2>
-                    <p> Jetson TX2 is the fastest, most power-efficient embedded AI computing device. This 7.5-watt supercomputer on a module brings true AI computing at the edge. It's built around an NVIDIA Pascal™-family GPU and loaded with 8GB of memory and 59.7GB/s of memory bandwidth. It features a variety of standard hardware interfaces that make it easy to integrate it into a wide range of products and form factors.</p>
-                    <p> For more details, <a href="https://developer.nvidia.com/embedded/jetson-tx2-developer-kit">click</a> here.</p>
-                    
+                    <p> Jetson TX2 is the fastest, most power-efficient embedded AI computing device. This 7.5-watt
+                        supercomputer on a module brings true AI computing at the edge. It's built around an NVIDIA
+                        Pascal™-family GPU and loaded with 8GB of memory and 59.7GB/s of memory bandwidth. It features a
+                        variety of standard hardware interfaces that make it easy to integrate it into a wide range of
+                        products and form factors.</p>
+                    <p> For more details, <a
+                            href="https://developer.nvidia.com/embedded/jetson-tx2-developer-kit">click</a> here.</p>
+
                     <a name="power"></a>
                     <h2>Power</h2>
-                    <p> To provide sufficient power to JETSON board, we choose  POWEROAK 50000mah Portable Battery Pack.</p>
-                    <p> For more details, <a href="https://www.amazon.com/POWEROAK-External-capacity-50000mAh-Portable/dp/B073R6NKLW/ref=sr_1_1_sspa?keywords=power+bank+5%2F12%2F20+V&qid=1558997826&s=gateway&sr=8-1-spons&psc=1">click</a> here.</p>
-                    
+                    <p> To provide sufficient power to JETSON board, we choose POWEROAK 50000mah Portable Battery
+                        Pack.</p>
+                    <p> For more details, <a
+                            href="https://www.amazon.com/POWEROAK-External-capacity-50000mAh-Portable/dp/B073R6NKLW/ref=sr_1_1_sspa?keywords=power+bank+5%2F12%2F20+V&qid=1558997826&s=gateway&sr=8-1-spons&psc=1">click</a>
+                        here.</p>
+
                     <a name="storage"></a>
                     <h2>Storage</h2>
                     <p> To store the data from multiple sensors, at least a large capacity of 500GB SSD is needed.</p>
-                    <p> For more details, <a href="https://www.amazon.com/dp/B0781Z7Y3S/ref=cm_sw_em_r_mt_dp_U_J5AuEbWZ56K6C">click</a> here.</p>
-                    
+                    <p> For more details, <a
+                            href="https://www.amazon.com/dp/B0781Z7Y3S/ref=cm_sw_em_r_mt_dp_U_J5AuEbWZ56K6C">click</a>
+                        here.</p>
+
                     <a name="controller"></a>
                     <h2>Controller</h2>
-                    <p> Teensy microcontroller recevies control signal from JETSON TX2, then drive the rally cars' servo and motor.</p>
-                    <p> For more details, <a href="https://www.amazon.com/PJRC-Teensy-3-6-Without-Pins/dp/B01LWQM6IQ/ref=sr_1_2?crid=1HOLNA9AIRJ64&keywords=teensy+3.6&qid=1559084114&s=industrial&sprefix=Teensy+3%2Cindustrial%2C194&sr=1-2">click</a> here.</p>
-                    
+                    <p> Teensy microcontroller recevies control signal from JETSON TX2, then drive the rally cars' servo
+                        and motor.</p>
+                    <p> For more details, <a
+                            href="https://www.amazon.com/PJRC-Teensy-3-6-Without-Pins/dp/B01LWQM6IQ/ref=sr_1_2?crid=1HOLNA9AIRJ64&keywords=teensy+3.6&qid=1559084114&s=industrial&sprefix=Teensy+3%2Cindustrial%2C194&sr=1-2">click</a>
+                        here.</p>
+
                     <a name="sensor"></a>
                     <h2>Sensors</h2>
                     <p> Three sensors are used: ZED stereo camera, YDLIDAR G4 laser scanner, and IMU.</p>
-                    <p> 1. <a href="https://www.amazon.com/PJRC-Teensy-3-6-Without-Pins/dp/B01LWQM6IQ/ref=sr_1_2?crid=1HOLNA9AIRJ64&keywords=teensy+3.6&qid=1559084114&s=industrial&sprefix=Teensy+3%2Cindustrial%2C194&sr=1-2">ZED stereo camera</a>, which is a 3D camera, captures environment images, which is used for object detection and object recognition.</p>
-                    <p> 2. <a href="https://www.robotshop.com/en/ydlidar-g4-360-laser-scanner.html">YDLIDAR G4 laser scanner</a>, which is a 360° lidar, detects the distance to surrounding obstacles, which is used for localization and obstacle avoidance.</p>
-                    <p> 3. <a href="https://www.amazon.com/SparkFun-PID-14001-9DoF-Razor/dp/B01MXW00BY/ref=sr_1_1?keywords=SparkFun+9DoF+Razor+IMU+M0&qid=1571776610&sr=8-1">IMU</a> is used for better localization.</p>
-                    
+                    <p> 1. <a
+                            href="https://www.amazon.com/PJRC-Teensy-3-6-Without-Pins/dp/B01LWQM6IQ/ref=sr_1_2?crid=1HOLNA9AIRJ64&keywords=teensy+3.6&qid=1559084114&s=industrial&sprefix=Teensy+3%2Cindustrial%2C194&sr=1-2">ZED
+                        stereo camera</a>, which is a 3D camera, captures environment images, which is used for object
+                        detection and object recognition.</p>
+                    <p> 2. <a href="https://www.robotshop.com/en/ydlidar-g4-360-laser-scanner.html">YDLIDAR G4 laser
+                        scanner</a>, which is a 360° lidar, detects the distance to surrounding obstacles, which is used
+                        for localization and obstacle avoidance.</p>
+                    <p> 3. <a
+                            href="https://www.amazon.com/SparkFun-PID-14001-9DoF-Razor/dp/B01MXW00BY/ref=sr_1_1?keywords=SparkFun+9DoF+Razor+IMU+M0&qid=1571776610&sr=8-1">IMU</a>
+                        is used for better localization.</p>
+
                     <a name="cuda"></a>
                     <h2>CUDA</h2>
                     <p> JETSON TX2 board uses 256-core NVIDIA Pascal™ GPU architecture with 256 NVIDIA CUDA cores.</p>
                     <p> For more details, <a href="https://docs.nvidia.com/cuda/index.html">click</a> here.</p>
-                    
+
                     <a name="ros"></a>
                     <h2>ROS</h2>
-                    <p> To better control the self-driving car, the basic module is developed under ROS Melodic, which is available for Ubuntu 18.04 LTS.</p>
+                    <p> To better control the self-driving car, the basic module is developed under ROS Melodic, which
+                        is available for Ubuntu 18.04 LTS.</p>
                     <p> For more details, <a href="http://wiki.ros.org/melodic/Installation/Ubuntu">click</a> here.</p>
                 </div>
-                
-                <div id="setup" class="container-fluid" style="width:1450px;height:620px; overflow:auto; display: none;">
+
+                <div id="setup" class="container-fluid"
+                     style="width:1450px;height:620px; overflow:auto; display: none;">
                     <a name="frame"></a>
                     <h2>Frame</h2>
-                    <p> The self-driving car is composed of three layers: Base layer, Main Control layer, and Sensor layer .</p>
+                    <p> The self-driving car is composed of three layers: Base layer, Main Control layer, and Sensor
+                        layer .</p>
                     <p> 1. Base layer: This is the basic of the car, including the chassis, wheels, and motors.</p>
-                    <p> 2. Main Control layer: This is the JETSON TX2 control board, which connect with multiple sensors, storage, and power.</p>
-                    <p> 3. Sensor layer: This includes all necessary sensors, including stereo camera, lidar, and IMU.</p>
-                    <p> Every two layers are connected by copper pillars. The Main Control layer and the Sensor layer are placed on the self-designed plate.</p>
-                    
+                    <p> 2. Main Control layer: This is the JETSON TX2 control board, which connect with multiple
+                        sensors, storage, and power.</p>
+                    <p> 3. Sensor layer: This includes all necessary sensors, including stereo camera, lidar, and
+                        IMU.</p>
+                    <p> Every two layers are connected by copper pillars. The Main Control layer and the Sensor layer
+                        are placed on the self-designed plate.</p>
+
                     <a name="camera"></a>
                     <h2>Camera</h2>
-                    <p> 1. Download <a href="https://www.stereolabs.com/developers/release/">ZED SDK</a> and install on JETSON TX2 board.<p>
-                    <p> 2. Open terminal, run the following command to test if the camera works well. <pre><code>          /usr/local/zed/tools/ZED Explorer</code></pre> </p>
+                    <p> 1. Download <a href="https://www.stereolabs.com/developers/release/">ZED SDK</a> and install on
+                        JETSON TX2 board.
+                    <p>
+                    <p> 2. Open terminal, run the following command to test if the camera works well.
+                    <pre><code>          /usr/local/zed/tools/ZED Explorer</code></pre>
+                    </p>
                     <p> 3. Connect the camera to Jetson board through USB 3.0 port. </p>
                     <p> For more info about ROS, <a href="https://www.stereolabs.com/docs/ros/">click</a> here.</p>
-                    
+
                     <a name="lidar"></a>
                     <h2>Lidar</h2>
-                    <p> 1. Download <a href="https://github.com/EAIBOT/ydlidar">ydlidar ROS package</a> into JETSON TX2 board.</p>
-                    <p> 2. Clone this package under the ROS folder<code>          /catkin/src</code> .</p>
-                    <p> 3. Running the following command under <code>/catkin</code> directory to build ydlidar_node and ydlidar_client package.<pre><code>          $catkin_make</code></pre></p>
+                    <p> 1. Download <a href="https://github.com/EAIBOT/ydlidar">ydlidar ROS package</a> into JETSON TX2
+                        board.</p>
+                    <p> 2. Clone this package under the ROS folder<code> /catkin/src</code> .</p>
+                    <p> 3. Running the following command under <code>/catkin</code> directory to build ydlidar_node and
+                        ydlidar_client package.
+                    <pre><code>          $catkin_make</code></pre>
+                    </p>
                     <p> 4. Create the name <code>catkin/dev/ydlidar</code> for YDLIDAR.</p>
-                    <p> 5. Open terminal, run the following command to move to startup directory.<pre><code>          $roscd ydlidar/startup</code></pre></p>
-                    <p> 6. Run following command to make all files be executable.<pre><code>          $sudo chmod 777 ./*</code></pre></p>
-                    <p> 7. Run following command to initialize the environment.<pre><code>          $sudo sh initenv.sh</code></pre></p>
-                    <p> 8. If everything is good, then use the following command to test lidar scan result in rviz.<pre><code>          $roslaunch ydlidar lidar_view.launch</code></pre></p>
+                    <p> 5. Open terminal, run the following command to move to startup directory.
+                    <pre><code>          $roscd ydlidar/startup</code></pre>
+                    </p>
+                    <p> 6. Run following command to make all files be executable.
+                    <pre><code>          $sudo chmod 777 ./*</code></pre>
+                    </p>
+                    <p> 7. Run following command to initialize the environment.
+                    <pre><code>          $sudo sh initenv.sh</code></pre>
+                    </p>
+                    <p> 8. If everything is good, then use the following command to test lidar scan result in rviz.
+                    <pre><code>          $roslaunch ydlidar lidar_view.launch</code></pre>
+                    </p>
 
                     <a name="other"></a>
                     <h2>Other</h2>
-                    <p> IMU guide can be find <a href="https://learn.sparkfun.com/tutorials/9dof-razor-imu-m0-hookup-guide?_ga=2.109712005.1219536249.1587611949-736292108.1587611949">here</a> .</p>
+                    <p> IMU guide can be find <a
+                            href="https://learn.sparkfun.com/tutorials/9dof-razor-imu-m0-hookup-guide?_ga=2.109712005.1219536249.1587611949-736292108.1587611949">here</a>
+                        .</p>
 
                 </div>
                 <!-- /.container-fluid -->

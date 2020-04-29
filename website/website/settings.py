@@ -24,7 +24,7 @@ SECRET_KEY = ')h$+stuic#yj8&5xc^mg!3#coph@el&p+1hpjqvf5-=7ltl0s('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["192.168.39.130", "192.168.39.152", "localhost", "98.207.239.209", "cmcs.pichao314.com"]
+ALLOWED_HOSTS = ["192.168.39.130", "192.168.39.152", "localhost", "98.207.239.209", "cmcs.pichao314.com", "127.0.0.1"]
 
 # Application definition
 
