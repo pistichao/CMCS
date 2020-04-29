@@ -130,6 +130,7 @@ def init_user(request):
         firstname, lastname = user.strip().split()
         nu = (
             firstname[:2] + lastname[:2],
+            "password",
             firstname,
             lastname,
             firstname + "@email.com",
@@ -140,12 +141,13 @@ def init_user(request):
         new_users.append(nu)
     for cdd in new_users:
         u = Users(username=cdd[0],
-                  firstname=cdd[1],
-                  lastname=cdd[2],
-                  email=cdd[3],
-                  address=cdd[4],
-                  tel=cdd[5],
-                  cars=cdd[6],
+                  password=cdd[1],
+                  firstname=cdd[2],
+                  lastname=cdd[3],
+                  email=cdd[4],
+                  address=cdd[5],
+                  tel=cdd[6],
+                  cars=cdd[7],
                   )
         u.save()
     return HttpResponse("<p>Inited!</p>")

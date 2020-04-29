@@ -1,4 +1,4 @@
 #!/bin/bash
 python manage.py migrate
-python manage.py makemigrations Database
-python manage.py migrate Database
+python manage.py makemigrations DataBase
+python manage.py migrate DataBase
