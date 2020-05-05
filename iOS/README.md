@@ -1,1 +1,3 @@
-This folder contains the code of IOS app.
+The following link contains the ios app.
+
+[Smart Car](https://github.com/fionleung/smartCar)
