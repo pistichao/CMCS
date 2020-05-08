@@ -33,5 +33,6 @@ urlpatterns = [
     url(r'^search-form$', search.search_form),
     url(r'^search$', search.search),
     url(r'^login', view.login),
+    url(r'control', view.control),
     url(r'.*', view.notfound)
 ]

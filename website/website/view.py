@@ -47,6 +47,9 @@ def gather(cl):
     return overview
 
 
+g_ud = {}
+
+
 def login(request):
     if request.method == "POST":
         email = request.POST.get('email')
@@ -101,6 +104,7 @@ def login(request):
                 'car_power2': overview['car_power'][2],
                 'car_ps2': overview['power_style'][2],
             }
+            g_ud = u_dict
             if user.password == pswd:
                 return render(request, 'user.html', u_dict)
             return render(request, 'login.html', {'message': message})
@@ -112,3 +116,21 @@ def login(request):
 
 def notfound(request):
     return render(request, '404.html')
+
+
+import socket
+
+
+def control(request):
+    UDP_IP = '192.168.39.138'
+    UDP_PORT = 9999
+
+    def call():
+        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        cmd = "RUN"
+        s.sendto(cmd.encode(), (UDP_IP, UDP_PORT))
+        s.close()
+
+    call()
+
+    return render(request, 'user.html', g_ud)
